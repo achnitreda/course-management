@@ -11,7 +11,7 @@ export class CourseService {
     @InjectRepository(Course) private courseRepository: Repository<Course>,
   ) {}
   create(createCourseDto: CreateCourseDto) {
-    return 'This action adds a new course';
+    return this.courseRepository.save(createCourseDto);
   }
 
   findAll() {
